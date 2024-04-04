@@ -23,15 +23,13 @@
   </script>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <div class="l-container">
     <div class="l-body">
       <header class="l-header p-header">
-        <a href="index.html" class="p-header__title">Hamburger</a>
-        <form class="p-header__search">
-          <div class="p-searchBox">
-            <input type="search" class="c-input p-searchBox__input"><button type="submit" class="c-btn p-searchBox__btn">検索</button>
-          </div>
-        </form>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__title"><?php bloginfo('name'); ?></a>
+
+        <?php get_search_form(); ?>
+
         <button class="p-header__menuBtn js-menuBtn">Menu</button>
       </header>
