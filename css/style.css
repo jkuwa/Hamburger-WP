@@ -252,7 +252,7 @@ body.is-open {
   content: "";
   width: 24px;
   height: 24px;
-  background: url(../../../images/header_searchBox.svg);
+  background: url(../images/header_searchBox.svg);
   position: absolute;
   top: 10px;
   left: 10px;
@@ -287,7 +287,7 @@ body.is-open {
 }
 .p-main__mv {
   height: 285px;
-  background-image: url(../../../images/front_mv.jpg);
+  background-image: url(../images/front_mv.jpg);
 }
 @media (min-width: 1200px) {
   .p-main__mv {
@@ -455,17 +455,17 @@ body.is-open {
   }
 }
 .p-content.-takeOut {
-  background: url(../../../images/front_toc-1.jpg) center/cover;
+  background: url(../images/front_toc-1.jpg) center/cover;
 }
 .p-content.-takeOut h2 {
   color: #EAEAEA;
 }
 .p-content.-eatIn {
-  background: url(../../../images/front_toc-2.jpg) center/cover;
+  background: url(../images/front_toc-2.jpg) center/cover;
 }
 
 .p-about {
-  background: url(../../../images/front_about_map.jpg) center/cover;
+  background: url(../images/front_about_map.jpg) center/cover;
   position: relative;
   flex-grow: 1;
 }
@@ -564,7 +564,7 @@ body.is-open {
 }
 
 .p-footer {
-  background: url(../../images/footer_bg.png) repeat;
+  background: url(../images/footer_bg.png) repeat;
   color: #fff;
   text-align: center;
 }
@@ -713,14 +713,14 @@ body.is-open {
 }
 .p-archive__mv {
   height: 285px;
-  background-image: url(../../../images/archive_mv.jpg);
+  background-image: url(../images/archive_mv.jpg);
   background-position: left;
   position: relative;
 }
 @media (min-width: 1200px) {
   .p-archive__mv {
     height: 239px;
-    background-image: url(../../../images/archive_mv_pc.jpg);
+    background-image: url(../images/archive_mv_pc.jpg);
     background-position: center;
   }
 }
@@ -1043,7 +1043,7 @@ body.is-open {
 }
 .p-single__mv {
   height: 225px;
-  background-image: url(../../../images/single_mv.jpg);
+  background-image: url(../images/single_mv.jpg);
 }
 @media (min-width: 768px) {
   .p-single__mv {
@@ -1226,7 +1226,7 @@ body.is-open {
 }
 
 .u-page__mv {
-  background-image: url(../../../images/page_mv.jpg);
+  background-image: url(../images/page_mv.jpg);
 }
 .u-page__title {
   margin-left: 12%;

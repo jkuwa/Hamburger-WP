@@ -1,9 +1,12 @@
 <footer class="l-footer p-footer">
-    <?php  wp_nav_menu(); ?>
+    <?php
+      wp_nav_menu(array(
+        'theme_location' => 'footer_menu',
+        'menu_class' => 'p-footer__nav',
+      ));
+    ?>
     <small>Copyright: RaiseTech</small>
   </footer>
 
-  <script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
