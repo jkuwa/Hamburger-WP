@@ -1,8 +1,5 @@
 <footer class="l-footer p-footer">
-    <ul class="p-footer__nav">
-      <li><a href="page.html">ショップ情報</a></li>
-      <li><a href="#">ヒストリー</a></li>
-    </ul>
+    <?php  wp_nav_menu(); ?>
     <small>Copyright: RaiseTech</small>
   </footer>
 
