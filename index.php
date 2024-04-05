@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-
-
     
       <main class="l-main p-main">
         <div class="c-mv p-main__mv">
@@ -50,6 +48,6 @@
       </main>
     </div>
     
-<?php get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
