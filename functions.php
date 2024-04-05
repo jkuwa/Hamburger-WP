@@ -74,3 +74,13 @@
       return ''; // h2タグが見つからない場合は空文字を返す
     }
   }
+
+  // 投稿のアーカイブを古い順に変更
+  function custom_archive_order($query) {
+    if (!is_admin() && $query->is_main_query()) {
+      $query->set('post_type', 'post');
+      $query -> set('orderby', 'date');
+      $query -> set('order', 'ASC');
+    }  
+  }
+  add_action('pre_get_posts', 'custom_archive_order');
