@@ -7,6 +7,7 @@
     ?>
     <small>Copyright: RaiseTech</small>
   </footer>
+  <?php wp_footer(); ?>
 
 </body>
 </html>
