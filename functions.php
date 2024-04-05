@@ -58,3 +58,19 @@
     );
   }
   add_action('widgets_init', 'hamburger_widgets_init');
+
+  // 小見出しを取得
+  function get_post_subtitle() {
+    global $post;
+    // 投稿文を取得
+    $content = apply_filters('the_content', $post->post_content);
+    // 本文からh2見出しを抽出
+    $pattern = '/<h2[^>]*>(.*?)<\/h2>/';
+    preg_match($pattern, $content, $matches);
+    // 最初のh2タグのタイトルを返す
+    if (!empty($matches[0])) {
+      return strip_tags($matches[0]); // タイトルを返す
+    } else {
+      return ''; // h2タグが見つからない場合は空文字を返す
+    }
+  }
