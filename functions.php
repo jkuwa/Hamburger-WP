@@ -63,7 +63,7 @@
   function get_post_subtitle() {
     global $post;
     // 投稿文を取得
-    $content = apply_filters('the_content', $post->post_content);
+    $content = apply_filters('the_content', $post -> post_content);
     // 本文からh2見出しを抽出
     $pattern = '/<h2[^>]*>(.*?)<\/h2>/';
     preg_match($pattern, $content, $matches);
@@ -77,8 +77,8 @@
 
   // 投稿のアーカイブを古い順に変更
   function custom_archive_order($query) {
-    if (!is_admin() && $query->is_main_query()) {
-      $query->set('post_type', 'post');
+    if (!is_admin() && $query -> is_main_query()) {
+      $query -> set('post_type', 'post');
       $query -> set('orderby', 'date');
       $query -> set('order', 'ASC');
     }  

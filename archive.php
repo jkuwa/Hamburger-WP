@@ -48,21 +48,29 @@
             </ul>            
           </section>
 
-          <?php if($wp_query -> max_num_pages > 1): ?>
-          <ul class="p-pagination">
-            <li class="p-pagination__pcList">page 1/10</li>
-            <li><a class="p-pagination__link -pre">前へ</a></li>
-            <li class="p-pagination__pcList"><a class="c-pageList p-pagination--this">1</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">2</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">3</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">4</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">5</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">6</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">7</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">8</a></li>
-            <li class="p-pagination__pcList"><a href="#" class="c-pageList">9</a></li>
-            <li><a href="#" class="p-pagination__link -next">次へ</a></li>
-          </ul>
+          <?php if ( $wp_query -> max_num_pages > 1 ): ?>
+            <ul class="p-pagination">
+              <li class="p-pagination__pcList">
+                <?php
+                  $current_page = max(1, get_query_var('paged')); // 現在のページ番号を取得
+                  $total_pages = $wp_query->max_num_pages; // 総ページ数を取得
+                  echo 'page ' . $current_page . '/' . $total_pages;
+                ?>
+              </li>
+              <li class="p-pagination__link -pre"><?php previous_posts_link( '前へ' ); ?></li>
+              <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
+                <li class="p-pagination__pcList">
+                  <?php if ($i == $current_page) : ?>
+                    <span class="c-pageList p-pagination--this"><?php echo $i; ?></span>
+                  <?php else : ?>
+                    <a href="<?php echo esc_url(get_pagenum_link($i)); ?>" class="c-pageList"><?php echo $i; ?></a>
+                  <?php endif; ?>
+                </li>
+              <?php endfor; ?>
+              <li class="p-pagination__link -next"><?php next_posts_link( '次へ' ); ?></li>
+            </ul>
+          <?php endif; ?>
+
         </div>
       </main>
     </div>
