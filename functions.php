@@ -84,3 +84,10 @@
     }  
   }
   add_action('pre_get_posts', 'custom_archive_order');
+
+  // editor-style追加
+  function hamburger_theme_add_editor_styles() {
+    add_theme_support('editor-styles');
+    add_editor_style(array("/css/style-editor.css"));
+  }
+  add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
