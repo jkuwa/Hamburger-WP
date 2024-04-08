@@ -7,32 +7,36 @@
 
         <div class="c-wrapper p-toc__wrapper">
           <div class="p-toc">
-            <section class="p-content -takeOut">
-              <h2>Take Out</h2>
-              <dl>
-                <div class="p-content__dl">
-                  <dt>Take OUT</dt>
-                  <dd>当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dd>
-                </div>
-                <div class="p-content__dl">
-                  <dt>Take OUT</dt>
-                  <dd>当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dd>
-                </div>
-              </dl>
-            </section>
-            <section class="p-content -eatIn">
-              <h2>Eat In</h2>
-              <dl>
-                <div class="p-content__dl">
-                  <dt>Eat In</dt>
-                  <dd>店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
-                </div>
-                <div class="p-content__dl">
-                  <dt>Eat In</dt>
-                  <dd>店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
-                </div>
-              </dl>
-            </section>
+            <a href="<?php echo get_term_link( 8, 'post_tag'); ?>">
+              <section class="p-content -takeOut">
+                <h2>Take Out</h2>
+                <dl>
+                  <div class="p-content__dl">
+                    <dt>Take OUT</dt>
+                    <dd>当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dd>
+                  </div>
+                  <div class="p-content__dl">
+                    <dt>Take OUT</dt>
+                    <dd>当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dd>
+                  </div>
+                </dl>
+              </section>
+            </a>
+            <a href="<?php echo get_term_link( 9, 'post_tag'); ?>">
+              <section class="p-content -eatIn">
+                <h2>Eat In</h2>
+                <dl>
+                  <div class="p-content__dl">
+                    <dt>Eat In</dt>
+                    <dd>店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
+                  </div>
+                  <div class="p-content__dl">
+                    <dt>Eat In</dt>
+                    <dd>店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dd>
+                  </div>
+                </dl>
+              </section>
+            </a>
           </div>  
         </div>    
 
