@@ -72,7 +72,7 @@ ol ol {
   padding: 17px 18px;
 }
 ol li div {
-  display: inline-block;  /* ブロックだと先頭の番号がずれてしまうため */
+  display: inline-block;  /* ブロックだと先頭の番号が上にずれてしまうため */
 }
 ul {
   margin-bottom: 30px;
