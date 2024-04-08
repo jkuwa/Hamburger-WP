@@ -18,7 +18,8 @@
               if(have_posts()):
                 while(have_posts()):
                   the_post();
-            ?>           
+            ?>
+
                 <li <?php post_class('p-card'); ?>>
                   <div class="p-card__img">
                     <?php the_post_thumbnail(); ?>
@@ -37,6 +38,7 @@
                     <a href="<?php the_permalink(); ?>" class="c-btn--white p-caption__btn">詳しく見る</a>            
                   </div>             
                 </li>
+                
                 <?php endwhile; 
               else: ?>
                 <p>表示するメニューがありません</p>

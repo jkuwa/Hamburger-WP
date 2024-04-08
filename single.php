@@ -13,9 +13,12 @@
 
         <div class="c-wrapper p-article__wrapper">
           <article class="p-article">
+
             <?php the_content(); ?>
+
           </article>
         </div>
+
         <?php $args = array (
                     'before' => '<div class="page-split">',
                     'after' => '</div>',
@@ -28,6 +31,7 @@
   else: ?>
     <p>表示する記事がありません<p>
 <?php endif; ?>
+
       </main>    
     </div>
 
