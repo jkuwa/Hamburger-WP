@@ -46,7 +46,7 @@
   function hamburger_widgets_init() {
     register_sidebar (
       array (
-        'name' => 'メニューーウィジェット',
+        'name' => 'メニューウィジェット',
         'id' => 'menu_widget',
         'description' => 'メニュー用ウィジェットです',
         'class' => 'p-menuList',
