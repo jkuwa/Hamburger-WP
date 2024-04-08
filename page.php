@@ -26,9 +26,9 @@
         ?>
     <?php endwhile;
   else: ?>
-        <p>表示する記事がありません<p>
-  <?php endif; ?>
-      </main>
+    <p>表示する記事がありません<p>
+<?php endif; ?>
+      </main>    
     </div>
 
     <?php get_sidebar(); ?>
