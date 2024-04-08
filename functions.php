@@ -18,7 +18,7 @@
     if ( is_front_page() && is_home()) {
       $title = get_bloginfo('name', 'display');
     } elseif ( is_singular()) {
-      $title = single_post_title('', false);
+      $title = single_post_title( get_bloginfo('name').' | ', false);
     }
     return $title;
   }
