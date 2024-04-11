@@ -7,7 +7,7 @@
 
         <div class="c-wrapper p-toc__wrapper">
           <div class="p-toc">
-            <a href="<?php echo get_term_link( 6, 'post_tag'); ?>">
+            <a href="<?php echo get_term_link( 'take-out', 'post_tag'); ?>">
               <section class="p-content -takeOut">
                 <h2>Take Out</h2>
                 <dl>
@@ -22,7 +22,7 @@
                 </dl>
               </section>
             </a>
-            <a href="<?php echo get_term_link( 7, 'post_tag'); ?>">
+            <a href="<?php echo get_term_link( 'eat-in', 'post_tag'); ?>">
               <section class="p-content -eatIn">
                 <h2>Eat In</h2>
                 <dl>
