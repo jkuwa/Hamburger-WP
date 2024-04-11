@@ -821,6 +821,10 @@ body.is-open {
     margin-top: 70px;
   }
 }
+.p-archiveList .p-archiveList__none {
+  margin-top: 50px;
+  font-size: 2rem;
+}
 
 .p-card {
   width: 100%;
