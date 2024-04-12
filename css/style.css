@@ -935,8 +935,7 @@ body.is-open {
 }
 
 .p-pagination {
-  margin-top: 62px;
-  height: 3.5rem;
+  margin: 62px auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -947,6 +946,7 @@ body.is-open {
     margin-top: 106px;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
   }
 }
 @media (min-width: 1200px) {
@@ -954,6 +954,7 @@ body.is-open {
     margin-top: 150px;
   }
 }
+
 .p-pagination--this {
   background-color: #3C2B1C;
   color: #fff;
