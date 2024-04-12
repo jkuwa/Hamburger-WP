@@ -28,7 +28,7 @@
                     <div class="p-caption__text">
                       <h3><?php the_title(); ?></h3>
                       <?php
-                        $get_post_subtitle = get_post_subtitle();
+                        $get_post_subtitle = esc_html( get_post_subtitle() );
                         if (!empty($get_post_subtitle)) {
                           echo '<h4>' . $get_post_subtitle . '</h4>';
                         }
@@ -61,7 +61,7 @@
                   <?php if ($i == $current_page) : ?>
                     <span class="c-pageList p-pagination--this"><?php echo $i; ?></span>
                   <?php else : ?>
-                    <a href="<?php echo esc_url(get_pagenum_link($i)); ?>" class="c-pageList"><?php echo $i; ?></a>
+                    <a href="<?php echo esc_url( get_pagenum_link($i) ); ?>" class="c-pageList"><?php echo $i; ?></a>
                   <?php endif; ?>
                 </li>
               <?php endfor; ?>
