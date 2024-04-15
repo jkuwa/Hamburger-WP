@@ -1,8 +1,23 @@
 <?php
+  // 翻訳ファイル読み込み
+  function hamburger_theme_setup() {
+    load_theme_textdomain('hamburger', get_template_directory().'/languages');
+  }
+  add_action('after_setup_theme', 'hamburger_theme_setup');
+
   // テーマサポート
   // add_theme_support('menus');
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
+  add_theme_support('automatic-feed-links');
+  add_theme_support('custom-header');
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
+  add_theme_support('html5', array('comment-form', 'comment-list'));
+  add_theme_support('custom-logo');
+  add_theme_support('align-wide');
+  add_theme_support('custom-background');
+
 
   // メニュー登録
   function my_menus() {
@@ -32,13 +47,12 @@
     // googlefonts
     wp_enqueue_style('m-plus1p', 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap',array());
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap',array());
-
-    // デフォルトのjQueryを削除
-    wp_deregister_script('jquery');
+    //adobefonts
+    wp_enqueue_script('m-plus1m', get_theme_file_uri().'/js/font.js', array());
     // jQuery読み込み
-    wp_enqueue_script('jquery', get_template_directory_uri().'/js/jquery-3.7.1.min.js', array(), false, true);
+    wp_enqueue_script('jquery');
     // js読み込み
-    wp_enqueue_script('my-script', get_template_directory_uri().'/js/main.js', array('jquery'));
+    wp_enqueue_script('my-script', get_template_directory_uri().'/js/main.js', array('jquery'), false, true);
   }
   add_action('wp_enqueue_scripts', 'hamburger_script');
 
@@ -94,3 +108,27 @@
     add_editor_style(array("/css/editor-style.css"));
   }
   add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
+
+  // ブロックスタイル追加
+  register_block_style( 'core/heading',
+    array(
+      'name' => 'heading',
+      'label' => '縦ライン',
+      'inline_style' => '.is-style-heading {
+        padding-left: 8px;
+        border-left: 4px solid #4A6C9B;
+      }'
+    )
+  );
+
+  // ブロックパターン追加
+  function my_block_pattern() {
+    register_block_pattern ('my-plugin/my-custom-pattern',
+    array(
+      'title' => 'grid gallery',
+      'content' => '<div class="p-article__gallery"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"></div>'
+    ));
+  }
+  add_action( 'init', 'my_block_pattern' );
+
+
