@@ -16,6 +16,8 @@
 
             <?php the_content(); ?>
 
+            <?php comments_template(); ?>
+
           </article>
         </div>
 
@@ -29,7 +31,7 @@
         ?>
     <?php endwhile;
   else: ?>
-    <p>表示する記事がありません<p>
+    <p><?php _e('There are no articles to display.', 'hamburger'); ?><p>
 <?php endif; ?>
 
       </main>    
