@@ -109,6 +109,9 @@ blockquote {
     padding: 50px 50px 60px;
   }
 }
+.wp-block-quote {
+  border: none;
+}
 cite {
   font-style: normal;
 }
@@ -160,6 +163,35 @@ pre code {
   }
 }
 
+/* ブロックスタイル */
+.is-style-heading {
+  padding-left: 8px;
+  border-left: 4px solid #4A6C9B;
+}
 
 
-
+/* パターン */
+.p-article__gallery {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .p-article__gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .p-article__gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.p-article__gallery img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .p-article__list {
+    margin-left: 50px;
+  }
+}

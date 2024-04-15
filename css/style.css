@@ -1167,6 +1167,7 @@ body.is-open {
 .p-article blockquote {
   margin-bottom: 30px;
   padding: 30px 20px;
+  border: none;
   background-color: #F5F5F5;
 }
 @media (min-width: 768px) {
@@ -1213,7 +1214,6 @@ body.is-open {
 .wp-block-media-text .wp-block-media-text__media  img{
   margin-bottom: 30px;
 }
-
 .wp-block-button__link {
   margin-bottom: 30px;
   padding: 28px 138px;
@@ -1229,6 +1229,86 @@ body.is-open {
   }
 }
 
+.wp-caption,
+.wp-caption-text,
+.gallery-caption {
+  font-size: 1.3rem;
+}
+.sticky {
+  padding: 20px;
+  border: 1px solid #4A6C9B;
+}
+.bypostauthor {
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+.alignright,
+.alignleft,
+.aligncenter {
+  margin: 0;
+}
+
+/* パターン */
+.p-article__gallery {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .p-article__gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .p-article__gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.p-article__gallery img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .p-article__list {
+    margin-left: 50px;
+  }
+}
+
+
+/* comment */
+.p-comment h2 {
+  margin-top: 69px;
+}
+.p-comment h3 {
+  margin-top: 69px;
+}
+.p-comment a {
+  color: #4A6C9B;
+}
+.p-comment .comment-form {
+  padding: 32px;
+  background: #F5F5F5;
+}
+.p-comment .comment-form label {
+  display: block;
+}
+.p-comment textarea,
+.p-comment input[type="text"] {
+  width: 100%;
+  border: 1px solid #F2EDE9;
+  background: #fff;
+}
+.p-comment .comment-form .form-submit {
+  margin-bottom: 0;
+  text-align: right;
+}
+.p-comment .form-submit .submit {
+  padding: 10px 28px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  background: linear-gradient(to left bottom, #F2EDE9, #DED8D3);
+}
+
 
 .u-page__title {
   margin-left: 12%;
@@ -1238,7 +1318,6 @@ body.is-open {
     margin-left: min(10%, 86px);
   }
 }
-
 .u-404__title span{
   font-size: 2rem;
 }
@@ -1291,4 +1370,7 @@ body.is-open {
   color: inherit;
 }
 
+.screen-reader-text {
+  font-size: 0;
+}
 /*# sourceMappingURL=style.css.map */
