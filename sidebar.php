@@ -2,7 +2,7 @@
       <div class="p-nav__mask js-navMask"></div>
       <nav class="p-menu l-menu js-menu">
         <button class="p-menu__btn js-closeBtn">
-          <span>メニューを閉じる</span>
+          <span><?php _e('close', 'hamburger'); ?></span>
         </button>
 
         <?php
@@ -12,7 +12,7 @@
         ?>
         <div class="widget">
           <h2>No Widget</h2>
-          <p>ウィジェットは設定されていません。</p>
+          <p><?php _e('No widgets configured.', 'hamburger'); ?></p>
         </div>
         <?php endif; ?>
 

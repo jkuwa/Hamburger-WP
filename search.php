@@ -35,39 +35,18 @@
                       ?>
                       <?php the_excerpt(); ?>                   
                     </div>
-                    <a href="<?php the_permalink(); ?>" class="c-btn--white p-caption__btn">詳しく見る</a>            
+                    <a href="<?php the_permalink(); ?>" class="c-btn--white p-caption__btn"><?php _e('more', 'hamburger'); ?></a>            
                   </div>             
                 </li>
                 <?php endwhile; 
               else: ?>
-                <p class="p-archiveList__none">申し訳ありません。<br>あなたが検索した「 <?php the_search_query(); ?> 」と一致するメニューは見つかりませんでした(TT)</p>
+                <p class="p-archiveList__none"><?php _e("I'm sorry.", 'hamburger'); ?><br><?php _e('No menu matching the search word was found', 'hamburger'); ?>(TT)</p>
             <?php endif; ?>
             
             </ul>            
           </section>
 
-          <?php if ( $wp_query -> max_num_pages > 1 ): ?>
-            <ul class="p-pagination">
-              <li class="p-pagination__pcList">
-                <?php
-                  $current_page = max(1, get_query_var('paged')); // 現在のページ番号を取得
-                  $total_pages = $wp_query->max_num_pages; // 総ページ数を取得
-                  echo 'page ' . $current_page . '/' . $total_pages;
-                ?>
-              </li>
-              <li class="p-pagination__link -pre"><?php previous_posts_link( '前へ' ); ?></li>
-              <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                <li class="p-pagination__pcList">
-                  <?php if ($i == $current_page) : ?>
-                    <span class="c-pageList p-pagination--this"><?php echo $i; ?></span>
-                  <?php else : ?>
-                    <a href="<?php echo esc_url( get_pagenum_link($i) ); ?>" class="c-pageList"><?php echo $i; ?></a>
-                  <?php endif; ?>
-                </li>
-              <?php endfor; ?>
-              <li class="p-pagination__link -next"><?php next_posts_link( '次へ' ); ?></li>
-            </ul>
-          <?php endif; ?>
+          <?php include("pagination.php"); ?>
 
         </div>
       </main>

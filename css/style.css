@@ -1229,24 +1229,6 @@ body.is-open {
   }
 }
 
-.wp-caption,
-.wp-caption-text,
-.gallery-caption {
-  font-size: 1.3rem;
-}
-.sticky {
-  padding: 20px;
-  border: 1px solid #4A6C9B;
-}
-.bypostauthor {
-  padding: 20px;
-  background-color: #F5F5F5;
-}
-.alignright,
-.alignleft,
-.aligncenter {
-  margin: 0;
-}
 
 /* パターン */
 .p-article__gallery {
@@ -1309,6 +1291,14 @@ body.is-open {
   background: linear-gradient(to left bottom, #F2EDE9, #DED8D3);
 }
 
+.p-404__title span{
+  font-size: 2rem;
+}
+.p-404__homeLink {
+  color: #4A6C9B;
+  text-decoration: underline;
+}
+
 
 .u-page__title {
   margin-left: 12%;
@@ -1318,15 +1308,28 @@ body.is-open {
     margin-left: min(10%, 86px);
   }
 }
-.u-404__title span{
-  font-size: 2rem;
+
+/* 投稿ページスタイル */
+.wp-caption,
+.wp-caption-text,
+.gallery-caption {
+  font-size: 1.3rem;
 }
-.u-404__pageLink {
-  color: #4A6C9B;  
-  text-decoration: underline;
+.sticky {
+  padding: 20px;
+  border: 1px solid #4A6C9B;
+}
+.bypostauthor {
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+.alignright,
+.alignleft,
+.aligncenter {
+  margin: 0;
 }
 
-
+/* ページング */
 .page-split {
   margin: 0 auto 62px;
   height: 3.5rem;
