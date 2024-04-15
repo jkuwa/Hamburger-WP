@@ -47,7 +47,7 @@
             </ul>            
           </section>
 
-          <?php include("pagination.php"); ?>
+          <?php get_template_part('pagination'); ?>
 
         </div>
       </main>
