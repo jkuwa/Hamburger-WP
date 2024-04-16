@@ -6,7 +6,6 @@
   add_action('after_setup_theme', 'hamburger_theme_setup');
 
   // テーマサポート
-  // add_theme_support('menus');
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
   add_theme_support('automatic-feed-links');
@@ -33,7 +32,7 @@
     if ( is_front_page() && is_home()) {
       $title = get_bloginfo('name', 'display');
     } elseif ( is_singular()) {
-      $title = single_post_title( get_bloginfo('name').' | ', false);
+      $title = single_post_title( get_bloginfo('name', 'display').' | ', false);
     }
     return $title;
   }
@@ -48,7 +47,7 @@
     wp_enqueue_style('m-plus1p', 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap',array());
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap',array());
     //adobefonts
-    wp_enqueue_script('m-plus1m', get_theme_file_uri().'/js/font.js', array());
+    wp_enqueue_script('m-plus1m', get_theme_file_uri('/js/font.js'), array());
     // jQuery読み込み
     wp_enqueue_script('jquery');
     // js読み込み
@@ -126,7 +125,7 @@
     register_block_pattern ('my-plugin/my-custom-pattern',
     array(
       'title' => 'grid gallery',
-      'content' => '<div class="p-article__gallery"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"><img src="' . get_theme_file_uri() . '/images/single_article.jpg" alt="ハンバーガーセット"></div>'
+      'content' => '<div class="p-article__gallery"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"></div>'
     ));
   }
   add_action( 'init', 'my_block_pattern' );
