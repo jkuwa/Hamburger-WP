@@ -28,7 +28,7 @@
             </ul>            
           </section>
 
-          <?php get_template_part('pagination'); ?>
+          <?php wp_pagenavi( array('wrapper_class' => 'p-pagination') ); ?>
 
         </div>
       </main>

@@ -130,4 +130,36 @@
   }
   add_action( 'init', 'my_block_pattern' );
 
+// ページネーション
+add_filter('wp_pagenavi_class_pages', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_previouspostslink', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_nextpostslink', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_page', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_current', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_extend', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_first', 'hamburger_pagination_class');
+add_filter('wp_pagenavi_class_last', 'hamburger_pagination_class');
 
+function hamburger_pagination_class($class_name) {
+  switch($class_name) {
+    case 'pages' :
+    case 'extend' :
+      $class_name = 'p-pagination__pcList';
+      break;
+    case 'previouspostslink' :
+      $class_name = 'p-pagination__link -pre';
+      break;
+    case 'nextpostslink' :
+      $class_name = 'p-pagination__link -next';
+      break;
+    case 'page' :
+    case 'first' :
+    case 'last' :
+      $class_name = 'c-pageList p-pagination__pcList';
+      break;
+    case 'current' :
+      $class_name = 'c-pageList p-pagination__pcList p-pagination--this';
+      break;
+  }
+  return $class_name;
+}
