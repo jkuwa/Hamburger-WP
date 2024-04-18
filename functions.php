@@ -30,9 +30,9 @@
   // タイトル出力
   function hamburger_title($title) {
     if ( is_front_page() && is_home()) {
-      $title = get_bloginfo('name', 'display');
+      $title = esc_html( get_bloginfo('name', 'display') );
     } elseif ( is_singular()) {
-      $title = single_post_title( get_bloginfo('name', 'display').' | ', false);
+      $title = single_post_title( esc_html( get_bloginfo('name', 'display') ).' | ', false);
     }
     return $title;
   }
