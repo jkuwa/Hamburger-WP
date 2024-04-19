@@ -8,7 +8,9 @@
       <main id="post-<?php the_ID(); ?>" <?php post_class('l-main p-single'); ?>>
         <div class="c-mv p-single__mv">
           <div class="p-single__title--bg"><?php the_post_thumbnail(); ?></div>
-          <h1 class="p-single__title"><?php the_title(); ?></h1>
+          <div class="c-title__wrapper p-singeTitle__wrapper">
+            <h1 class="p-single__title"><?php the_title(); ?></h1>
+          </div>
         </div>
 
         <div class="c-wrapper p-article__wrapper">
