@@ -2,7 +2,9 @@
     
       <main class="l-main p-main">
         <div class="c-mv p-main__mv">
-          <h1>ダミーサイト</h1>
+          <div class="c-wrapper p-mainTitle__wrapper">
+            <h1>ダミーサイト</h1>
+          </div>
         </div>
 
         <div class="c-wrapper p-toc__wrapper">

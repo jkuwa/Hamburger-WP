@@ -39,7 +39,6 @@ ul {
 .l-header {
   padding: 43px 0 39px;
   width: 100%;
-  background: #FFF7EF;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -183,6 +182,7 @@ body.is-open {
 }
 
 .p-header {
+  background: #FFF7EF;
   color: #707070;
 }
 .p-header__title {
@@ -277,6 +277,7 @@ body.is-open {
   background-color: #FFFDFA;
 }
 .p-main__mv {
+  width: 100%;
   height: 285px;
   background-image: url(../images/front_mv.jpg);
 }
@@ -287,16 +288,36 @@ body.is-open {
   }
 }
 .p-main__mv h1 {
-  margin-left: 7%;
   color: #fff;
   font-size: 3.6rem;
   font-weight: 700;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .p-main__mv h1 {
-    margin-left: min(10%, 86px);
+    font-size: 4rem;
   }
 }
+.p-mainTitle__wrapper {
+  width: 86%;
+}
+@media (min-width: 768px) {
+  .p-mainTitle__wrapper {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .p-mainTitle__wrapper {
+    margin: 0 86px;
+    width: 100%;
+    max-width: 1352px;
+  }
+}
+@media (min-width: 1920px) {
+  .p-mainTitle__wrapper {
+    margin: 0 auto;
+  }
+}
+
 .p-main .p-toc {
   padding: 20px 0 49px;
   display: flex;
