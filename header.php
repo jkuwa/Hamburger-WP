@@ -14,9 +14,10 @@
   <div class="l-container">
     <div class="l-body">
       <header class="l-header p-header">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__title"><?php bloginfo('name'); ?></a>
+        <div class="p-header__inner">
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__title"><?php bloginfo('name'); ?></a>
 
-        <?php get_search_form(); ?>
-
+          <?php get_search_form(); ?>
+        </div>
         <button class="p-header__menuBtn js-menuBtn">Menu</button>
       </header>

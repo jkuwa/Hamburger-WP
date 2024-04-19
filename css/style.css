@@ -40,9 +40,7 @@ ul {
   padding: 43px 0 39px;
   width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 @media (min-width: 768px) {
   .l-header {
@@ -51,9 +49,7 @@ ul {
 }
 @media (min-width: 1200px) {
   .l-header {
-    padding: 66px 31px 67px 65px;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 66px 0 67px;
   }
 }
 
@@ -184,6 +180,24 @@ body.is-open {
 .p-header {
   background: #FFF7EF;
   color: #707070;
+}
+.p-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  .p-header__inner {
+    margin: 0 31px 0 65px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1920px) {
+  .p-header__inner {
+    margin: 0 auto;
+    width: 1428px;
+  }
 }
 .p-header__title {
   font-family: "Roboto", sans-serif;
