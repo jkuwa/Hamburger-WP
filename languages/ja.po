@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hamburger\n"
-"POT-Creation-Date: 2024-04-15 20:11+0900\n"
-"PO-Revision-Date: 2024-04-15 20:12+0900\n"
+"POT-Creation-Date: 2024-04-19 16:26+0900\n"
+"PO-Revision-Date: 2024-04-19 16:27+0900\n"
 "Last-Translator: \n"
 "Language-Team: kuwa\n"
 "Language: ja\n"
@@ -14,50 +14,42 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:6
+#: 404.php:7
 msgid "The page you are looking for could not be found."
 msgstr "お探しのページが見つかりませんでした"
 
-#: 404.php:7
+#: 404.php:9
 msgid "I'm sorry. The page you are looking for may have been moved or deleted."
 msgstr ""
 "申し訳ございません。お探しのページは移動または削除された可能性があります。"
 
-#: 404.php:7
+#: 404.php:10
 msgid ""
 "We apologize for the inconvenience, but please search again from the top "
 "page."
 msgstr "お手数ですが、トップページより再度お探しください。"
 
-#: 404.php:8
+#: 404.php:11
 msgid "HOME"
 msgstr "トップへ戻る"
 
-#: archive.php:38 search.php:38
-msgid "more"
-msgstr "詳しく見る"
-
-#: archive.php:44
+#: archive.php:25
 msgid "There are no menus to display."
 msgstr "表示するメニューがありません"
 
-#: page.php:30 single.php:34
+#: card.php:16
+msgid "more"
+msgstr "詳しく見る"
+
+#: page.php:32 single.php:34
 msgid "There are no articles to display."
 msgstr "表示する記事がありません"
 
-#: pagination.php:10
-msgid "PREV"
-msgstr "前へ"
-
-#: pagination.php:20
-msgid "NEXT"
-msgstr "次へ"
-
-#: search.php:43
+#: search.php:25
 msgid "I'm sorry."
 msgstr "申し訳ございません。"
 
-#: search.php:43
+#: search.php:25
 msgid "No menu matching the search word was found"
 msgstr "検索ワードと一致するメニューは見つかりませんでした"
 
@@ -72,3 +64,9 @@ msgstr "メニューを閉じる"
 #: sidebar.php:15
 msgid "No widgets configured."
 msgstr "ウィジェットは設定されていません"
+
+#~ msgid "PREV"
+#~ msgstr "前へ"
+
+#~ msgid "NEXT"
+#~ msgstr "次へ"
