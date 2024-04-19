@@ -7,7 +7,7 @@
 
         <div class="c-wrapper p-toc__wrapper">
           <div class="p-toc">
-            <a href="<?php echo esc_url( get_term_link('takeout', 'category') ); ?>">
+            <a href="<?php echo esc_url( get_term_link('takeout', 'category') ); ?>" class="p-toc__link">
               <section class="p-content -takeOut">
                 <h2>Take Out</h2>
                 <dl>
@@ -22,7 +22,7 @@
                 </dl>
               </section>
             </a>
-            <a href="<?php echo esc_url( get_term_link('eatin', 'category') ); ?>">
+            <a href="<?php echo esc_url( get_term_link('eatin', 'category') ); ?>" class="p-toc__link">
               <section class="p-content -eatIn">
                 <h2>Eat In</h2>
                 <dl>
