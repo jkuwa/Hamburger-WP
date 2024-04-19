@@ -2,7 +2,7 @@
 
       <main class="l-main p-archive">
         <div class="c-mv p-archive__mv">
-          <div class="p-archive__title">
+          <div class="c-wrapper p-archive__title">
             <h1>Menu:<span><?php single_term_title(); ?></span></h1>
           </div>
         </div>
