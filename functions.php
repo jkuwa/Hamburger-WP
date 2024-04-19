@@ -108,27 +108,6 @@
   }
   add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
 
-  // ブロックスタイル追加
-  register_block_style( 'core/heading',
-    array(
-      'name' => 'heading',
-      'label' => '縦ライン',
-      'inline_style' => '.is-style-heading {
-        padding-left: 8px;
-        border-left: 4px solid #4A6C9B;
-      }'
-    )
-  );
-
-  // ブロックパターン追加
-  function my_block_pattern() {
-    register_block_pattern ('my-plugin/my-custom-pattern',
-    array(
-      'title' => 'grid gallery',
-      'content' => '<div class="p-article__gallery"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"><img src="' . get_theme_file_uri('/images/single_article.jpg') . '" alt="ハンバーガーセット"></div>'
-    ));
-  }
-  add_action( 'init', 'my_block_pattern' );
 
 // ページネーション
 add_filter('wp_pagenavi_class_pages', 'hamburger_pagination_class');
