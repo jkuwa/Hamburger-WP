@@ -539,7 +539,7 @@ body.is-open {
   .p-about__wrapper {
     margin-left: min(7%, 120px);
     width: 46%;
-    max-width: 950px;
+    max-width: 697px;
   }
 }
 .p-about__text {
