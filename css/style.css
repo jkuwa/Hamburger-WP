@@ -1,9 +1,13 @@
 @charset "utf-8";
 
+/* ============================================================
+ foundation
+ ============================================================ */
+
+/* --- base --- */
 html {
   font-size: 62.5%;
 }
-
 body {
   width: 100%;
   color: #3C2A10;
@@ -16,26 +20,29 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-
 img {
   vertical-align: bottom;
 }
-
 a:hover,
 button:hover {
   opacity: 0.7;
 }
 
+/* --- reset --- */
 a {
   color: inherit;
   text-decoration: none;
 }
-
 ul {
   list-style: none;
 }
 
 
+/* ============================================================
+ layout
+ ============================================================ */
+
+/* --- header --- */
 .l-header {
   padding: 43px 0 39px;
   width: 100%;
@@ -53,6 +60,7 @@ ul {
   }
 }
 
+/* --- footer --- */
 .l-footer {
   padding: 20px 0 16px;
   height: 150px;
@@ -68,19 +76,20 @@ ul {
   }
 }
 
+/* --- menu --- */
 .l-menu {
   padding: 178px 0 178px 46px;
-  width: 328px;
+  width: 32.8rem;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -367px;
+  right: -36.7rem;
   z-index: 10;
   overflow-y: auto;
 }
 @media (min-width: 768px) {
   .l-menu {
-    width: 367px;
+    width: 36.7rem;
   }
 }
 @media (min-width: 1200px) {
@@ -99,6 +108,7 @@ body.is-open {
   position: fixed;
 }
 
+/* --- front page --- */
 @media (min-width: 1200px) {
   .l-container {
     display: flex;
@@ -120,22 +130,30 @@ body.is-open {
     max-width: 36.7rem;
   }
 }
+
+
+/* ============================================================
+ object / component
+ ============================================================ */
+
+/* --- input --- */
 .c-input {
   border: 1px solid #707070;
   border-radius: 10px;
 }
 
+/* --- btn --- */
 .c-btn {
   border: 1px solid #707070;
   border-radius: 10px;
   background: linear-gradient(to left bottom, #F2EDE9, #DED8D3);
 }
-
 .c-btn--white {
   border-radius: 25px;
   background-color: #fff;
 }
 
+/* --- mv --- */
 .c-mv {
   width: 100%;
   background-size: cover;
@@ -144,6 +162,7 @@ body.is-open {
   align-items: center;
 }
 
+/* --- page list --- */
 .c-pageList {
   width: 3.5rem;
   height: 3.5rem;
@@ -157,6 +176,7 @@ body.is-open {
   color: #fff;
 }
 
+/* --- wrapper --- */
 .c-wrapper {
   margin: 0 auto;
   width: 90%;
@@ -168,7 +188,6 @@ body.is-open {
     max-width: 950px;
   }
 }
-
 .c-title__wrapper {
   margin: 0 auto;
   width: 86%;
@@ -193,15 +212,11 @@ body.is-open {
   }
 }
 
-.c-margin--top {
-  margin-top: 30px;
-}
-@media (min-width: 768px) {
-  .c-margin--top {
-    margin-top: 60px;
-  }
-}
+/* ============================================================
+ object / project
+ ============================================================ */
 
+/* --- header --- */
 .p-header {
   background: #FFF7EF;
   color: #707070;
@@ -221,7 +236,7 @@ body.is-open {
 @media (min-width: 1920px) {
   .p-header__inner {
     margin: 0 auto;
-    width: 1442px;
+    width: 1423px;
   }
 }
 .p-header__title {
@@ -275,7 +290,11 @@ body.is-open {
   }
 }
 
+/* --- search box --- */
 .p-searchBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   position: relative;
 }
 .p-searchBox::before {
@@ -284,27 +303,22 @@ body.is-open {
   height: 24px;
   background: url(../images/header_searchBox.svg);
   position: absolute;
-  top: calc(50% - 12px);
-  left: 1rem;
+  top: calc( 50% - 24px / 2 );   /* 上下中央に配置 */
+  left: 10px;
 }
 .p-searchBox__input {
-  margin-right: 16px;
-  padding-left: 40px;
-  width: calc(100% - 9rem - 16px);
+  padding-left: 44px;
+  width: 3rem;
   height: 4.6rem;
   background: #fff;
-}
-@media (min-width: 768px) {
-  .p-searchBox__input {
-    margin-right: 14px;
-    width: calc(100% - 13.6rem - 14px);
-  }
+  flex-grow: 1;
 }
 .p-searchBox__btn {
   padding: 0 28px;
   font-weight: 700;
   color: inherit;
   line-height: 4.4rem;
+  white-space: nowrap;
 }
 @media (min-width: 768px) {
   .p-searchBox__btn {
@@ -312,11 +326,11 @@ body.is-open {
   }
 }
 
+/* --- front --- */
 .p-main {
   background-color: #FFFDFA;
 }
 .p-main__mv {
-  width: 100%;
   height: 285px;
   background-image: url(../images/front_mv.jpg);
 }
@@ -357,7 +371,7 @@ body.is-open {
   .p-main .p-toc {
     padding-top: min(7%, 120px);
     padding-bottom: min(8%, 130px);
-    gap: 80px;
+    gap: min(5%, 80px);
   }
 }
 @media (min-width: 1200px) {
@@ -371,6 +385,7 @@ body.is-open {
   width: 100%;
 }
 
+/* --- content --- */
 .p-content {
   padding: 13px 0 16px;
   width: 100%;
@@ -499,6 +514,7 @@ body.is-open {
   background: url(../images/front_toc-2.jpg) center/cover;
 }
 
+/* --- about --- */
 .p-about {
   background: url(../images/front_about_map.jpg) center/cover;
   position: relative;
@@ -529,7 +545,6 @@ body.is-open {
 @media (min-width: 1200px) {
   .p-about__bg {
     width: 60%;
-    max-width: 950px;
   }
 }
 .p-about__wrapper {
@@ -539,7 +554,6 @@ body.is-open {
   .p-about__wrapper {
     margin-left: min(7%, 120px);
     width: 46%;
-    max-width: 697px;
   }
 }
 .p-about__text {
@@ -598,6 +612,7 @@ body.is-open {
   }
 }
 
+/* --- footer --- */
 .p-footer {
   background: url(../images/footer_bg.png) repeat;
   color: #fff;
@@ -636,6 +651,7 @@ body.is-open {
   }
 }
 
+/* --- sidebar menu --- */
 .p-nav {
   background-color: #F2EDE9;
 }
@@ -664,19 +680,22 @@ body.is-open {
   }
 }
 .p-menu__btn {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   position: absolute;
   top: 8px;
   right: 11px;
+}
+@media (min-width: 768px) {
+  .p-menu__btn {
+    top: 20px;
+    right: 25px;
+  }
 }
 @media (min-width: 1200px) {
   .p-menu__btn {
     display: none;
   }
-}
-.p-menu__btn > span {
-  font-size: 0;
 }
 .p-menu__btn::before, .p-menu__btn::after {
   content: "";
@@ -685,7 +704,8 @@ body.is-open {
   background: #707070;
   display: block;
   position: absolute;
-  top: 18px;
+  top: calc(50% - 6px / 2);   /* 上下中央に配置 */
+  left: 0;
 }
 .p-menu__btn::before {
   transform: rotate(45deg);
@@ -719,9 +739,6 @@ body.is-open {
     margin-top: 48px;
   }
 }
-.p-menu .menu > li {
-  font-size: 2.4rem;
-}
 .p-menu .sub-menu {
   margin-top: 40px;
   padding-left: 20px;
@@ -737,6 +754,7 @@ body.is-open {
   margin-top: 20px;
 }
 
+/* --- archive --- */
 .p-archive {
   padding-bottom: 32px;
   background-color: #FFFDFA;
@@ -769,7 +787,7 @@ body.is-open {
   left: 0;
 }
 .p-archive__title {
-  width: 79%;
+  width: 79%;   /* 左右のmarginを11.5%に指定 */
   color: #fff;
   font-weight: 700;
 }
@@ -779,7 +797,7 @@ body.is-open {
   }
 }
 .p-archive__title h1 {
-  height: calc(6rem + 15px);
+  height: calc(3.6rem + ( 1.6rem * 1.5 ) + 15px);   /* spanも含めた高さに設定 h1 + span + margin  */
   position: relative;
   font-family: "Roboto", sans-serif;
   font-size: 3.6rem;
@@ -795,7 +813,7 @@ body.is-open {
 .p-archive__title h1 span {
   display: inline-block;
   position: absolute;
-  top: calc(3.6rem + 15px);
+  top: calc(3.6rem + 15px);   /* h1の下に配置 h1 + margin */
   left: 0;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 1.6rem;
@@ -805,7 +823,7 @@ body.is-open {
 @media (min-width: 768px) {
   .p-archive__title h1 span {
     top: 2.4rem;
-    left: calc(17rem + 19px);
+    left: calc(17rem + 19px);   /* h1の右に配置 h1 + margin */
   }
 }
 @media (min-width: 1200px) {
@@ -813,6 +831,7 @@ body.is-open {
     top: 2.6rem;
   }
 }
+
 @media (min-width: 1200px) {
   .p-archive__wrapper {
     width: 87%;
@@ -864,11 +883,13 @@ body.is-open {
     margin-top: 70px;
   }
 }
+/* 検索結果がない場合 */
 .p-archiveList .p-archiveList__none {
   margin-top: 50px;
   font-size: 2rem;
 }
 
+/* --- card --- */
 .p-card {
   width: 100%;
   background-color: #3C2B1C;
@@ -977,6 +998,7 @@ body.is-open {
   }
 }
 
+/* --- pagination --- */
 .p-pagination {
   margin: 62px auto 0;
   display: flex;
@@ -1024,16 +1046,11 @@ body.is-open {
   border-top: 1px solid #707070;
   border-right: 1px solid #707070;
   position: absolute;
-  top: 0.6rem;
-}
-@media (min-width: 768px) {
-  .p-pagination__link::before, .p-pagination__link::after {
-    top: 1.1rem;
-  }
+  top: calc( 50% - 1.2rem / 2 );   /* 上下中央に配置 */
 }
 .p-pagination__link.-pre {
   margin-right: auto;
-  padding-left: 25.5px;
+  padding-left: 25.5px;   /* << の余白 */
 }
 @media (min-width: 768px) {
   .p-pagination__link.-pre {
@@ -1052,7 +1069,7 @@ body.is-open {
 }
 .p-pagination__link.-next {
   margin-left: auto;
-  padding-right: 25.5px;
+  padding-right: 25.5px;   /* >> の余白 */
 }
 @media (min-width: 768px) {
   .p-pagination__link.-next {
@@ -1081,7 +1098,7 @@ body.is-open {
   }
 }
 
-
+/* --- single --- */
 .p-single {
   background-color: #FFFDFA;
 }
@@ -1092,11 +1109,6 @@ body.is-open {
 @media (min-width: 768px) {
   .p-single__mv {
     height: min(60vw, 500px);
-  }
-}
-@media (min-width: 1200px) {
-  .p-single__mv {
-    height: 500px;
   }
 }
 .p-single__title {
@@ -1257,10 +1269,10 @@ body.is-open {
   border: 1px solid #707070;
 }
 
-.wp-block-media-text .wp-block-media-text__media  img{
+.p-article .wp-block-media-text__media img{
   margin-bottom: 30px;
 }
-.wp-block-button__link {
+.p-article .wp-block-button__link {
   margin-bottom: 30px;
   padding: 28px 138px;
   border: 1px solid #707070;
@@ -1274,20 +1286,24 @@ body.is-open {
     padding: 42px 190px;
   }
 }
-.u-pageTitle__wrapper {
+
+/* --- page --- */
+.p-pageTitle__wrapper {
   width: 76%;
+  max-width: 1366px;
 }
 @media (min-width: 768px) {
-  .u-pageTitle__wrapper {
+  .p-pageTitle__wrapper {
     width: 79%;
   }
 }
 @media (min-width: 1200px) {
-  .u-pageTitle__wrapper {
+  .p-pageTitle__wrapper {
     width: 100%;
   }
 }
 
+/* --- 404 page --- */
 .p-404__title span{
   font-size: 2rem;
 }
@@ -1296,6 +1312,12 @@ body.is-open {
   text-decoration: underline;
 }
 
+
+/* ============================================================
+ object / utility
+ ============================================================ */
+
+/* --- search --- */
 @media (min-width: 768px) {
   .u-search__title h1 span{
     left: calc(20.5rem + 20px);
@@ -1303,7 +1325,11 @@ body.is-open {
 }
 
 
-/* 投稿ページのページング */
+/* ============================================================
+ WordPress
+ ============================================================ */
+
+/* --- 投稿ページのページング --- */
 .page-split {
   margin: 0 auto 62px;
   height: 3.5rem;
@@ -1347,8 +1373,7 @@ body.is-open {
   color: inherit;
 }
 
-
-/* 推奨スタイル */
+/* --- 推奨スタイル --- */
 .sticky {
   border: 2px solid #F5F5F5;
 }
@@ -1393,16 +1418,20 @@ a img.aligncenter {
   padding: 5px 3px 10px;
   text-align: center;
 }
-.wp-caption.alignnone {
+.wp-caption.alignnone,
+.gallery-caption.alignnone {
   margin: 5px 20px 20px 0;
 }
-.wp-caption.alignleft {
+.wp-caption.alignleft,
+.gallery-caption.alignleft {
   margin: 5px 20px 20px 0;
 }
-.wp-caption.alignright {
+.wp-caption.alignright,
+.gallery-caption.alignright {
   margin: 5px 0 20px 20px;
 }
-.wp-caption img {
+.wp-caption img,
+.gallery-caption img {
   border: 0 none;
   height: auto;
   margin: 0;
@@ -1410,7 +1439,8 @@ a img.aligncenter {
   padding: 0;
   width: auto;
 }
-.wp-caption p.wp-caption-text {
+.wp-caption p.wp-caption-text,
+.gallery-caption p.wp-caption-text {
   font-size: 11px;
   line-height: 17px;
   margin: 0;

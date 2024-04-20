@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
-  <?php if ( is_singular() ) wp_enqueue_script ( 'comment-reply' ); ?>
   <?php wp_head(); ?>
 </head>
 
@@ -15,7 +14,9 @@
     <div class="l-body">
       <header class="l-header p-header">
         <div class="p-header__inner">
-          <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__title"><?php bloginfo('name'); ?></a>
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__title">
+            <?php bloginfo('name'); ?>
+          </a>
 
           <?php get_search_form(); ?>
         </div>

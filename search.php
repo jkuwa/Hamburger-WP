@@ -8,22 +8,22 @@
         </div>
 
         <div class="c-wrapper p-archive__wrapper">
-          <section class="p-archive__main">
-  
+          <section class="p-archive__main">  
             <ul class="p-archiveList">            
               <h2>小見出しが入ります</h2>
               <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
 
-              <?php if(have_posts()):
-                while(have_posts()):
+              <?php if( have_posts() ):
+                while( have_posts() ):
                   the_post();?>
 
                   <?php get_template_part('card'); ?>
 
                 <?php endwhile; 
               else: ?>
-                <p class="p-archiveList__none"><?php _e("I'm sorry.", 'hamburger'); ?><br><?php _e('No menu matching the search word was found', 'hamburger'); ?>(TT)</p>
-            <?php endif; ?>
+                <p class="p-archiveList__none"><?php _e("I'm sorry.", 'hamburger'); ?><br>
+                <?php _e('No menu matching the search word was found', 'hamburger'); ?>(TT)</p>
+              <?php endif; ?>
             
             </ul>            
           </section>

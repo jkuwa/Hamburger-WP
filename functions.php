@@ -5,6 +5,7 @@
   }
   add_action('after_setup_theme', 'hamburger_theme_setup');
 
+
   // テーマサポート
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
@@ -12,21 +13,22 @@
   add_theme_support('custom-header');
   add_theme_support('wp-block-styles');
   add_theme_support('responsive-embeds');
-  add_theme_support('html5', array('comment-form', 'comment-list'));
+  add_theme_support('html5', array('gallery', 'caption'));
   add_theme_support('custom-logo');
   add_theme_support('align-wide');
   add_theme_support('custom-background');
 
 
   // メニュー登録
-  function my_menus() {
+  function hamburger_menus() {
     register_nav_menus( array(
       'sidebar_menu' => 'Sidebar Menu',
       'footer_menu' => 'Footer Menu',
     ));
   }
-  add_action('after_setup_theme', 'my_menus');
+  add_action('after_setup_theme', 'hamburger_menus');
 
+  
   // タイトル出力
   function hamburger_title($title) {
     if ( is_front_page() && is_home()) {
@@ -41,19 +43,20 @@
 
   function hamburger_script() {
     // css読み込み
-    wp_enqueue_style('reset', get_template_directory_uri().'/css/ress.css',array());
-    wp_enqueue_style('my-style', get_template_directory_uri().'/css/style.css',array('reset'));
+    wp_enqueue_style('reset', get_theme_file_uri('css/ress.css'), array());
+    wp_enqueue_style('my-style', get_theme_file_uri('css/style.css'), array('reset'));
     // googlefonts
     wp_enqueue_style('m-plus1p', 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap',array());
     wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap',array());
     //adobefonts
-    wp_enqueue_script('m-plus1m', get_theme_file_uri('/js/font.js'), array());
+    wp_enqueue_script('m-plus1m', get_theme_file_uri('js/font.js'), array());
     // jQuery読み込み
     wp_enqueue_script('jquery');
     // js読み込み
-    wp_enqueue_script('my-script', get_template_directory_uri().'/js/main.js', array('jquery'), false, true);
+    wp_enqueue_script('my-script', get_theme_file_uri('js/main.js'), array('jquery'), false, true);
   }
   add_action('wp_enqueue_scripts', 'hamburger_script');
+
 
   // ウィジェット追加
   function hamburger_widgets_init() {
@@ -72,6 +75,7 @@
   }
   add_action('widgets_init', 'hamburger_widgets_init');
 
+
   // 小見出しを取得
   function get_post_subtitle() {
     global $post;
@@ -81,19 +85,20 @@
     $pattern = '/<h2[^>]*>(.*?)<\/h2>/';
     preg_match($pattern, $content, $matches);
     // 最初のh2タグのタイトルを返す
-    if (!empty($matches[0])) {
+    if ( !empty($matches[0]) ) {
       return strip_tags($matches[0]); // タイトルを返す
     } else {
       return ''; // h2タグが見つからない場合は空文字を返す
     }
   }
 
+
   // 投稿のアーカイブを古い順に変更
   function custom_archive_order($query) {
-    if ( is_admin() || ! $query -> is_main_query()) {
+    if ( is_admin() || ! $query -> is_main_query() ) {
       return;
     }
-    if ( is_archive()) {
+    if ( is_archive() ) {
       $query -> set('post_type', 'post');
       $query -> set('orderby', 'date');
       $query -> set('order', 'ASC');
@@ -101,44 +106,45 @@
   }
   add_action('pre_get_posts', 'custom_archive_order');
 
+
   // editor-style追加
   function hamburger_theme_add_editor_styles() {
     add_theme_support('editor-styles');
-    add_editor_style(array("/css/editor-style.css"));
+    add_editor_style('/css/editor-style.css');
   }
   add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
 
 
-// ページネーション
-add_filter('wp_pagenavi_class_pages', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_previouspostslink', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_nextpostslink', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_page', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_current', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_extend', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_first', 'hamburger_pagination_class');
-add_filter('wp_pagenavi_class_last', 'hamburger_pagination_class');
+  // ページネーション
+  add_filter('wp_pagenavi_class_pages', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_previouspostslink', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_nextpostslink', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_page', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_current', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_extend', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_first', 'hamburger_pagination_class');
+  add_filter('wp_pagenavi_class_last', 'hamburger_pagination_class');
 
-function hamburger_pagination_class($class_name) {
-  switch($class_name) {
-    case 'pages' :
-    case 'extend' :
-      $class_name = 'p-pagination__pcList';
-      break;
-    case 'previouspostslink' :
-      $class_name = 'p-pagination__link -pre';
-      break;
-    case 'nextpostslink' :
-      $class_name = 'p-pagination__link -next';
-      break;
-    case 'page' :
-    case 'first' :
-    case 'last' :
-      $class_name = 'c-pageList p-pagination__pcList';
-      break;
-    case 'current' :
-      $class_name = 'c-pageList p-pagination__pcList p-pagination--this';
-      break;
+  function hamburger_pagination_class( $class_name ) {
+    switch( $class_name ) {
+      case 'pages' :
+      case 'extend' :
+        $class_name = 'p-pagination__pcList';
+        break;
+      case 'previouspostslink' :
+        $class_name = 'p-pagination__link -pre';
+        break;
+      case 'nextpostslink' :
+        $class_name = 'p-pagination__link -next';
+        break;
+      case 'page' :
+      case 'first' :
+      case 'last' :
+        $class_name = 'c-pageList p-pagination__pcList';
+        break;
+      case 'current' :
+        $class_name = 'c-pageList p-pagination__pcList p-pagination--this';
+        break;
+    }
+    return $class_name;
   }
-  return $class_name;
-}

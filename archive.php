@@ -10,12 +10,13 @@
         <div class="c-wrapper p-archive__wrapper">
           <section class="p-archive__main">
             <h2>小見出しが入ります</h2>
-            <?php echo wp_kses_post(category_description()); ?>
+            
+            <?php echo wp_kses_post( category_description() ); ?>
 
             <ul class="p-archiveList">
 
-            <?php if(have_posts()):
-              while(have_posts()):
+            <?php if( have_posts() ):
+              while( have_posts() ):
                 the_post(); ?>
 
                 <?php get_template_part('card'); ?>

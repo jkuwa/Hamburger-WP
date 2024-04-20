@@ -1,6 +1,7 @@
 'use strict';
 
 jQuery(function() {
+  // メニューボタンをクリックするとメニューが開く
   jQuery(".js-menuBtn").on('click', function() {
     console.log('done');
     jQuery(".js-navMask").show();
@@ -8,16 +9,15 @@ jQuery(function() {
     jQuery("body").addClass("is-open");
   });
 
+  // 閉じるボタンをクリックするとメニューが閉じる
   jQuery(".js-closeBtn").on('click', function() {
     jQuery(".js-navMask").hide();
     jQuery(".js-menu").removeClass("is-open");
     jQuery("body").removeClass("is-open");
   });
 
-  jQuery(window).on('resize',function() {
-    const bp = 1200;
-    const width = jQuery(this).width();
-
+  // ウィンドウ幅を変更するとメニューを閉じる
+  jQuery(window).on('resize', function() {
     jQuery(".js-navMask").hide();
     jQuery(".js-menu").removeClass("is-open");
     jQuery("body").removeClass("is-open");
