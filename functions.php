@@ -36,7 +36,7 @@
     } elseif ( is_singular()) {
       $title = single_post_title( esc_html( get_bloginfo('name', 'display') ).' | ', false);
     }
-    return $title;
+    return '【架空】' .$title;
   }
   add_filter('pre_get_document_title', 'hamburger_title');
 
