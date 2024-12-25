@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
       <main class="l-main p-archive">
-        <div class="c-mv p-archive__mv">
+        <div class="c-mv c-mask p-archive__mv">
           <div class="c-title__wrapper p-archive__title">
             <h1>Menu:<span><?php single_term_title(); ?></span></h1>
           </div>

@@ -811,15 +811,6 @@ body.is-open {
     background-position: center;
   }
 }
-.p-archive__mv::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 .p-archive__title {
   width: 79%;   /* 左右のmarginを11.5%に指定 */
   color: #fff;
