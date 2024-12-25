@@ -152,6 +152,14 @@ body.is-open {
   border-radius: 25px;
   background-color: #fff;
 }
+.c-btn--line {
+  margin: 0;
+  align-self: flex-end;
+  color: #3C2B1C;
+  font-weight: 700;
+  line-height: 2;
+  text-decoration: underline;
+}
 
 /* --- mv --- */
 .c-mv {
@@ -1138,29 +1146,19 @@ body.is-open {
   max-width: 1366px;
 }
 
-.p-article {
-  padding: 34px 0 69px;
-}
-@media (min-width: 768px) {
-  .p-article {
-    padding: 60px 0 149px;
-  }
-}
-@media (min-width: 1200px) {
-  .p-article {
-    padding: 63px 0 274px;
-  }
-}
 .p-article__wrapper {
+  padding: 34px 0 69px;
   max-width: 1353px;
 }
 @media (min-width: 768px) {
   .p-article__wrapper {
+    padding: 60px 0 149px;
     width: 86%;
   }
 }
 @media (min-width: 1200px) {
   .p-article__wrapper {
+    padding: 63px 0 274px;
     width: 87%;
   }
 }
@@ -1287,6 +1285,152 @@ body.is-open {
   }
 }
 
+/* --- recommended --- */
+.p-recommended {
+  margin-top: 80px;
+}
+@media (min-width: 768px) {
+  .p-recommended {
+    margin-top: 120px;
+  }
+}
+.p-recommended section + div {
+  margin: 34px 0 0;
+}
+@media (min-width: 768px) {
+  .p-recommended section + div {
+    margin-top: 120px;
+  }
+}
+.p-recommended h2 {
+  margin-bottom: 0;
+  font-size: 2.4rem;
+}
+@media (min-width: 768px) {
+  .p-recommended h2 {
+    font-size: 3.6rem;
+  }
+}
+.p-recommended h2::before {
+  content: "";
+  margin-right: 4px;
+  width: 22px;
+  aspect-ratio: 2.2/2;
+  display: inline-block;
+  background: url(../images/star.png) center/cover no-repeat;
+}
+@media (min-width: 768px) {
+  .p-recommended h2::before {
+    margin-right: 8px;
+    width: 37px;
+  }
+}
+.p-recommended section > a {
+  margin-top: 16px;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .p-recommended section > a {
+    margin-top: 24px;
+  }
+}
+.p-recommended section > p {
+  margin-top: 16px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .p-recommended section > a {
+    margin-top: 24px;
+  }
+}
+.p-recommended ul {
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .p-recommended ul {
+    margin-top: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  .p-recommended ul {
+    -moz-column-gap: 2.7%;
+         column-gap: 2.7%;
+    row-gap: 37.5px;
+  }
+}
+@media (min-width: 768px) {
+  .p-recommended ul li {
+    width: calc(calc(100% - 60px)/2);
+  }
+}
+@media (min-width: 1200px) {
+  .p-recommended ul li {
+    width: 31.5333333333%;
+  }
+}
+.p-recommended .p-card {
+  height: 100%;
+  background-color: #F9F0E2;
+  flex-direction: column;
+}
+.p-recommended .p-card__img {
+  width: 100%;
+  aspect-ratio: unset;
+}
+.p-recommended .p-card__img img {
+  margin: 0;
+  height: auto;
+  aspect-ratio: 33.5/23.3;
+}
+@media (min-width: 768px) {
+  .p-recommended .p-card__img img {
+    aspect-ratio: 32.7/22.7;
+  }
+}
+@media (min-width: 1200px) {
+  .p-recommended .p-card__img img {
+    aspect-ratio: 42.6/29.6;
+  }
+}
+.p-recommended .p-card .p-caption {
+  padding: 24.7px 15px 20px;
+  width: 100%;
+  gap: 24px;
+}
+@media (min-width: 1200px) {
+  .p-recommended .p-card .p-caption {
+    padding: 28px 19px 23px;
+    gap: 26.8px;
+  }
+}
+.p-recommended .p-card .p-caption__text {
+  color: #3C2B1C;
+}
+.p-recommended .p-card .p-caption__text h3 {
+  padding: 0;
+  font-size: 3.2rem;
+}
+@media (min-width: 1200px) {
+  .p-recommended .p-card .p-caption__text h3 {
+    font-size: 3.6rem;
+  }
+}
+.p-recommended .p-card .p-caption__text p {
+  margin: 24px 0 0;
+}
+.p-recommended .p-card .p-caption a {
+  margin-right: 5px;
+  text-decoration: underline;
+}
+
 /* --- page --- */
 .p-pageTitle__wrapper {
   width: 76%;
@@ -1324,6 +1468,13 @@ body.is-open {
   }
 }
 
+/* --- post --- */
+@media (min-width: 1200px) {
+  .u-post {
+    padding-bottom: 152.5px;
+  }
+}
+
 
 /* ============================================================
  WordPress
@@ -1331,9 +1482,7 @@ body.is-open {
 
 /* --- 投稿ページのページング --- */
 .page-split {
-  margin: 0 auto 62px;
-  height: 3.5rem;
-  width: 90%;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1345,13 +1494,7 @@ body.is-open {
 }
 @media (min-width: 768px) {
   .page-split {
-    width: 86%;
-  }
-}
-@media (min-width: 1200px) {
-  .page-split {
-    width: 87%;
-    max-width: 1353px;
+    margin-top: 100px;
   }
 }
 .page-split span {

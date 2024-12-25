@@ -14,7 +14,37 @@
             <h1 class="p-single__title"><?php the_title(); ?></h1>
           </div>
         </div>
-        <?php get_template_part('article'); ?>
+        <div class="c-wrapper p-article__wrapper u-post">
+          <article class="p-article">
+            <?php the_content(); ?>
+          </article>
+
+          <?php get_template_part('pagination'); ?>
+
+          <aside class="p-recommended">
+            <section>
+              <h2>おすすめ情報</h2>
+
+            <?php if( get_field('recommended_link') ): ?>
+              <a href="<?php the_field('recommended_link'); ?>"><?php the_field('recommended_title'); ?></a>
+
+            <?php elseif( !get_field('recommended_title') ): ?>
+              <a href="#">ブログのトップページへ</a>
+
+            <?php else: ?>
+              <p><?php the_field('recommended_title'); ?></p>
+            <?php endif; ?>
+            
+            </section>
+
+            <?php
+              if( function_exists('yarpp_related') ) {
+                yarpp_related();
+              }
+            ?>
+                
+          </aside>
+        </div>
 
     <?php endwhile;
   else: ?>
