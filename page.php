@@ -14,7 +14,13 @@
             <h1 class="p-single__title"><?php the_title(); ?></h1>
           </div>
         </div>
-        <?php get_template_part('article'); ?>
+        <div class="c-wrapper p-article__wrapper">
+          <article class="p-article">
+            <?php the_content(); ?>
+          </article>
+        </div>
+
+        <?php get_template_part('pagination'); ?>
 
     <?php endwhile;
   else: ?>
