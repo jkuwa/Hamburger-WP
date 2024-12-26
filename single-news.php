@@ -13,22 +13,22 @@
           <h1 class="p-single__title"><?php the_title(); ?></h1>
 
           <?php
-            $categories = get_the_category();
-            if( $categories ) {
+            $categories = get_the_terms( get_the_ID(), 'news_cat' );
+            if( $categories && ! is_wp_error( $categories ) ) {
               echo '<ul class="c-list -cat p-news__mv--cat">';
               foreach ( $categories as $cat ) {
-                echo '<li>' . esc_html( $cat -> name ) .  '（' . $cat -> count . '）</li>';
+                echo '<li><a href="' . esc_url( get_term_link( $cat ) ) . '">' . esc_html( $cat -> name ) .  '（' . $cat -> count . '）</a></li>';
               }
               echo '</ul>';
             }
           ?>
 
           <?php
-            $tags = get_the_tags();
-            if( $tags ) {
+            $tags = get_the_terms( get_the_ID(), 'news_tag' );
+            if( $tags && ! is_wp_error( $tags ) ) {
               echo '<ul class="c-list -tag p-news__mv--tag">';
               foreach ( $tags as $tag ) {
-                echo '<li>' . esc_html( $tag -> name ) .  '（' . $tag -> count . '）</li>';
+                echo '<li><a href="' . esc_url( get_term_link( $tag ) ) . '">' . esc_html( $tag -> name ) .  '（' . $tag -> count . '）</a></li>';
               }
               echo '</ul>';
             }
