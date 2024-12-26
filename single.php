@@ -29,7 +29,7 @@
               <a href="<?php the_field('recommended_link'); ?>"><?php the_field('recommended_title'); ?></a>
 
             <?php elseif( !get_field('recommended_title') ): ?>
-              <a href="#">ブログのトップページへ</a>
+              <a href="<?php echo esc_url( get_post_type_archive_link('news') );?>">ブログのトップページへ</a>
 
             <?php else: ?>
               <p><?php the_field('recommended_title'); ?></p>
