@@ -40,7 +40,7 @@
           <article class="p-article">
             <?php the_content(); ?>
           </article>
-          <?php get_template_part('pagination'); ?>
+          <?php get_template_part('template/pagination'); ?>
         </div>
 
       </main>

@@ -19,7 +19,7 @@
             <?php the_content(); ?>
           </article>
 
-          <?php get_template_part('pagination'); ?>
+          <?php get_template_part('template/pagination'); ?>
 
           <aside class="p-recommended">
             <section>

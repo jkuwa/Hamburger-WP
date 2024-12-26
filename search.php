@@ -28,7 +28,7 @@
                 while( have_posts() ):
                   the_post();?>
 
-                  <?php get_template_part('card'); ?>
+                  <?php get_template_part('template/card'); ?>
 
                 <?php endwhile; 
               else: ?>

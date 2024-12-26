@@ -20,7 +20,7 @@
           </article>
         </div>
 
-        <?php get_template_part('pagination'); ?>
+        <?php get_template_part('template/pagination'); ?>
 
     <?php endwhile;
   else: ?>
