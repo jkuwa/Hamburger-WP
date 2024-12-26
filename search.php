@@ -3,7 +3,18 @@
       <main class="l-main p-archive">
         <div class="c-mv c-mask p-archive__mv">
           <div class="c-title__wrapper p-archive__title u-search__title">
-            <h1>Search:<span><?php the_search_query(); ?></span></h1>
+            <h1>Search:
+              <span>
+                <?php the_search_query(); ?>
+                <?php if( have_posts() ) {
+                  global $wp_query;
+                  echo '（' . esc_html( $wp_query -> found_posts ) . '件）';
+                } else {
+                  echo '（0件）';
+                }
+                ?>
+              </span>
+            </h1>
           </div>
         </div>
 
