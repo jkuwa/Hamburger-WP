@@ -35,6 +35,10 @@
       $title = esc_html( get_bloginfo('name', 'display') );
     } elseif ( is_singular()) {
       $title = single_post_title( esc_html( get_bloginfo('name', 'display') ).' | ', false);
+    } elseif ( is_post_type_archive('news') ) {
+      $title = esc_html( get_bloginfo('name', 'display') ).' | お知らせ';
+    } elseif ( is_archive() ) {
+      $title = single_term_title( esc_html( get_bloginfo('name', 'display') ).' | ', false);
     }
     return '【架空】' .$title;
   }
