@@ -76,23 +76,6 @@
   add_action('widgets_init', 'hamburger_widgets_init');
 
 
-  // 小見出しを取得
-  function get_post_subtitle() {
-    global $post;
-    // 投稿文を取得
-    $content = apply_filters('the_content', $post -> post_content);
-    // 本文からh2見出しを抽出
-    $pattern = '/<h2[^>]*>(.*?)<\/h2>/';
-    preg_match($pattern, $content, $matches);
-    // 最初のh2タグのタイトルを返す
-    if ( !empty($matches[0]) ) {
-      return strip_tags($matches[0]); // タイトルを返す
-    } else {
-      return ''; // h2タグが見つからない場合は空文字を返す
-    }
-  }
-
-
   // editor-style追加
   function hamburger_theme_add_editor_styles() {
     add_theme_support('editor-styles');
@@ -133,4 +116,20 @@
         break;
     }
     return $class_name;
+  }
+
+
+  // 投稿日が14日以内か判定してクラスを付与
+  function get_new_post_class( $post_date ) {
+    // 現在の日付と投稿日を酒毒
+    $current_date = date('Y-m-d');
+    $datetime_post = new DateTime( $post_date );
+    $datetime_now = new DateTime( $current_date );
+
+    // 差を計算
+    $interval = $datetime_post -> diff( $datetime_now );
+    $days_diff = $interval -> days;
+
+    // 14日以内ならクラスを返す
+    return $days_diff <= 14 ? 'c-newPost' : '';
   }

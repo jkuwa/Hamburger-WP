@@ -246,6 +246,22 @@ body.is-open {
   }
 }
 
+/* --- new post --- */
+.c-newPost::before {
+  content: "NEW";
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: #FF8A00;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "m-plus-1m", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
 /* ============================================================
  object / project
  ============================================================ */
@@ -965,6 +981,7 @@ body.is-open {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  position: relative;
   color: #fff;
 }
 @media (min-width: 768px) {

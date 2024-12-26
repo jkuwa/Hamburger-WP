@@ -2,7 +2,16 @@
   <div class="p-card__img">
     <?php the_post_thumbnail(); ?>
   </div>
-  <div class="p-caption">
+
+  <?php
+    // 投稿日を取得
+    $post_date = get_the_date('Y-m-d');
+
+    // クラスを取得
+    $new_class = get_new_post_class( $post_date );
+  ?>
+
+  <div class="<?php echo esc_attr( $new_class ); ?> p-caption">
     <div class="p-caption__text">
       <h3><?php the_title(); ?></h3>
 
