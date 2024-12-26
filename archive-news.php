@@ -3,15 +3,27 @@
       <main class="l-main p-archive u-news">
         <div class="c-mv c-mask p-archive__mv">
           <div class="c-title__wrapper p-archive__title">
-            <h1>News:<span><?php single_term_title(); ?></span></h1>
+            <h1>News:
+              <span>
+                すべての記事
+                <?php 
+                $news_count = wp_count_posts('news') -> publish;
+                if( $news_count ) {
+                  echo '（' . esc_html( $news_count ) . '件）';
+                } else {
+                  echo '（0件）';
+                }
+                ?>
+              </span>
+            </h1>
           </div>
         </div>
 
         <div class="c-wrapper p-archive__wrapper">
           <section class="p-archive__main">
             <h2>小見出しが入ります</h2>
-            <?php echo wp_kses_post( category_description() ); ?>
-  
+            <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+
             <?php if( have_posts() ): ?>
             <ul class="p-archiveList">
 
@@ -22,7 +34,7 @@
                 
               <?php endwhile; ?>
             </ul>    
-                    
+
             <?php else: ?>
                 <p><?php _e('There are no menus to display.', 'hamburger'); ?></p>
             <?php endif; ?>
